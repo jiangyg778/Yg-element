@@ -101,7 +101,6 @@ export default defineComponent({
   setup(props, { emit }) {
     //选中项
     const handleSelectionChange = (value) => {
-      console.log(value, 44444);
       emit("selectionChange", value);
     };
 

@@ -1,6 +1,6 @@
 <template>
   <YgForm
-    :formConfig="searchFormConfig"
+    :config="config"
     @resetBtnClick="handleResetClick"
     @queryBtnClick="handleQueryClick"
   >
@@ -15,7 +15,7 @@
 
 <script>
 import { YgForm } from "@/base-ui";
-import { searchFormConfig } from "./form.config.js";
+import { config } from "./form.config.js";
 export default {
   components: { YgForm },
   setup() {
@@ -31,7 +31,7 @@ export default {
     const customBtn = (item) => {
       console.log("插槽按钮", item);
     };
-    return { handleResetClick, customBtn, handleQueryClick, searchFormConfig };
+    return { handleResetClick, customBtn, handleQueryClick, config };
   },
 };
 </script>

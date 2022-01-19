@@ -1,9 +1,9 @@
-export const searchFormConfig = {
+export const config = {
   labelWidth: "120px",
   itemStyle: {
     padding: "10px 40px",
   },
-  btnSettings: ["确定啊"],
+  btnSettings: ["确定"],
   colLayout: { span: 8 },
   formItems: [
     {

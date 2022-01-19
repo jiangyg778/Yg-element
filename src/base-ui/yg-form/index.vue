@@ -1,6 +1,6 @@
 <template>
   <div class="page-search">
-    <YgForm v-bind="formConfig" v-model="formData" ref="ygFormRef">
+    <YgForm v-bind="config" v-model="formData" ref="ygFormRef">
       <template #header>
         <slot name="header"></slot>
       </template>
@@ -9,14 +9,14 @@
           <slot name="footer" v-bind="formData"></slot>
           <el-button
             @click="handleResetClick"
-            v-if="formConfig?.btnSettings?.[1] ?? true"
+            v-if="config?.btnSettings?.[1] ?? true"
             >重置</el-button
           >
           <el-button
             type="primary"
             @click="handleQueryClick"
-            v-if="formConfig?.btnSettings?.[0] ?? true"
-            >{{ formConfig?.btnSettings?.[0] ?? "搜索" }}</el-button
+            v-if="config?.btnSettings?.[0] ?? true"
+            >{{ config?.btnSettings?.[0] ?? "搜索" }}</el-button
           >
         </div>
       </template>
@@ -31,7 +31,7 @@ import YgForm from "./form";
 export default defineComponent({
   components: { YgForm },
   props: {
-    formConfig: {
+    config: {
       type: Object,
       default: () => {},
     },
@@ -41,7 +41,7 @@ export default defineComponent({
   setup(props, { emit }) {
     const formOriginData = {};
     // 1. formData中的属性由配置文件动态决定
-    const formItems = props.formConfig?.formItems ?? [];
+    const formItems = props.config?.formItems ?? [];
     for (const item of formItems) {
       formOriginData[item.field] = "";
     }

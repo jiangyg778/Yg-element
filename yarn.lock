@@ -4230,6 +4230,11 @@
   "resolved" "https://registry.npmmirror.com/highlight.js/download/highlight.js-10.7.3.tgz"
   "version" "10.7.3"
 
+"highlight.js@^11.4.0":
+  "integrity" "sha512-nawlpCBCSASs7EdvZOYOYVkJpGmAOKMYZgZtUqSRqodZE0GRVcFKwo1RcpeOemqh9hyttTdd5wDBwHkuSyUfnA=="
+  "resolved" "https://registry.npmmirror.com/highlight.js/download/highlight.js-11.4.0.tgz"
+  "version" "11.4.0"
+
 "hmac-drbg@^1.0.1":
   "integrity" "sha1-0nRXAQJabHdabFRXk+1QL8DGSaE="
   "resolved" "https://registry.nlark.com/hmac-drbg/download/hmac-drbg-1.0.1.tgz"

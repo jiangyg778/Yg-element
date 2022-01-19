@@ -1,6 +1,6 @@
 <template>
   <div class="container-self">
-    <el-container class="main">
+    <el-container>
       <el-header><Header /></el-header>
       <el-container>
         <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
@@ -16,11 +16,9 @@
             </el-menu>
           </el-scrollbar>
         </el-aside>
-        <el-main>
+        <el-main class="content">
           <el-scrollbar>
-            <div class="content">
-              <router-view></router-view>
-            </div>
+            <router-view></router-view>
           </el-scrollbar>
         </el-main>
       </el-container>
@@ -52,7 +50,8 @@ const handleGO = ({ path }) => {
   width: 100%;
   height: 100%;
   .content {
-    padding: 10px 40px;
+    padding: 10px 10px 10px 40px;
+    overflow: auto;
   }
 }
 .el-header {
@@ -82,7 +81,9 @@ const handleGO = ({ path }) => {
   right: 20px;
   transform: translateY(-50%);
 }
-.main {
+.el-container {
+  // height: 100%;
   height: 100%;
+  height: calc(100% - 60px);
 }
 </style>
