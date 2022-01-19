@@ -9,11 +9,28 @@
     <div class="preview">
       <Preview />
     </div>
+    <el-divider></el-divider>
     <h2>组件使用</h2>
+    <p><span>config：</span> 必填项,组件相关的配置信息</p>
+    <p><span>resetBtnClick：</span> 必填项,重置</p>
+    <p><span>queryBtnClick：</span> 必填项,确定</p>
     <div class="todo" v-highlight>
       <pre><code class="html">{{toUse}}</code></pre>
     </div>
+    <el-divider></el-divider>
     <h2>配置信息</h2>
+    <p>
+      <span>formItems：</span>
+      必填项,表单项配置信息[内部属性参考form-table]
+    </p>
+    <p>
+      <span>btnSettings：</span>
+      按钮配置信息[x,null]第二个参数为null则取消重置按钮
+    </p>
+    <p><span> colLayout：</span> 栅格布局,不传值则响应式</p>
+    <p><span> itemStyle：</span> form-item样式</p>
+    <p><span> labelWidth：</span> label宽度</p>
+
     <div class="todo" v-highlight>
       <pre><code class="html">{{toConfigCode}}</code></pre>
     </div>
@@ -41,5 +58,18 @@ import { toUse, toConfigCode } from "./code";
   padding: 5px;
   background: transparent;
   border: 1px solid #c0c4cc;
+}
+p {
+  margin: 1rem 0;
+  line-height: 1.7;
+  span {
+    background-color: var(--el-color-primary-light-9);
+  }
+}
+.child {
+  margin-left: 50px;
+  span {
+    margin-right: 5px;
+  }
 }
 </style>

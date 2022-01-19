@@ -1,9 +1,9 @@
 <template>
   <div class="yg-table">
     <YgTable
-      :contentTableConfig="contentTableConfig"
+      :config="contentTableConfig"
       :queryData="getData"
-      @onSelected="selectionChange"
+      @selected="selectionChange"
     >
       <!-- table顶部插槽 -->
       <template #header>
@@ -17,7 +17,6 @@
       </template>
       <template #url="scope">
         <el-image :src="scope.row.url"></el-image>
-        <span>{{ scope.row.type === 1 ? "是" : "否" }}</span>
       </template>
       <template #handler="scope">
         <el-button type="text" @click="edit(scope.row)">编辑</el-button>
@@ -38,9 +37,11 @@ export default defineComponent({
   setup() {
     // 此处为axios请求函数 返回一个promise对象包含{dataList,dataCount}
     const getData = (pageInfo) => {
+      console.log(pageInfo);
+
       //pageInfo 为分页信息
       let data = {
-        totalCount: 3,
+        totalCount: 50,
         pageData: [
           {
             id: 1,

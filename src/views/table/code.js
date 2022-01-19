@@ -2,9 +2,9 @@ export const toUse = `
 <template>
   <div class="yg-table">
     <YgTable
-      :contentTableConfig="contentTableConfig"
+      :config="contentTableConfig"
       :queryData="getData"
-      @onSelected="selectionChange"
+      @selected="selectionChange"
     >
       <!-- table顶部插槽 -->
       <template #header>

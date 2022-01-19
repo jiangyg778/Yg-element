@@ -3,7 +3,7 @@
     <YgTable
       :listData="dataList"
       :listCount="dataCount"
-      v-bind="contentTableConfig"
+      v-bind="config"
       v-model:page="pageInfo"
       @selectionChange="selectionChange"
     >
@@ -28,7 +28,7 @@ export default defineComponent({
     YgTable,
   },
   props: {
-    contentTableConfig: {
+    config: {
       type: Object,
       require: true,
     },
@@ -37,7 +37,7 @@ export default defineComponent({
       require: true,
     },
   },
-  emits: ["onSelected"],
+  emits: ["selected"],
   setup(props, { emit }) {
     //data数据
     let dataList = ref([]);
@@ -60,13 +60,13 @@ export default defineComponent({
     watch(pageInfo, () => getPageData());
 
     //插槽集合
-    const propSlots = props.contentTableConfig?.propList
+    const propSlots = props.config?.propList
       ?.map((item) => item?.slotName)
       .filter(Boolean);
 
     //选择列表项
     const selectionChange = (i) => {
-      emit("onSelected", i);
+      emit("selected", i);
     };
 
     return {
