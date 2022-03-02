@@ -33,6 +33,14 @@ const routes = [
             /* webpackChunkName: "index" */ "../views/form-table/index.vue"
           ),
       },
+      {
+        path: "/search-table",
+        name: "SearchTable",
+        component: () =>
+          import(
+            /* webpackChunkName: "index" */ "../views/search-table/index.vue"
+          ),
+      },
     ],
   },
 ];

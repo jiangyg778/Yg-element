@@ -36,6 +36,7 @@ let menuList = ref([
   { name: "form表单", path: "/form" },
   { name: "table列表", path: "/table" },
   { name: "form-table组合", path: "/form-table" },
+  { name: "search-table组合", path: "/search-table" },
 ]);
 const handleGO = ({ path }) => {
   router.push(path);
