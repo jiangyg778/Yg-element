@@ -10,6 +10,7 @@ const routes = [
       {
         path: "/",
         name: "Index",
+        redirect: "/form",
         component: () =>
           import(/* webpackChunkName: "index" */ "../views/home/index.vue"),
       },
