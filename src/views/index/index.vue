@@ -15,10 +15,10 @@
 <script setup>
 import { ref } from "vue";
 const actionList = ref([
-  { key: 1, name: "NPM私服", url: "http://124.221.131.186:4873/" },
-  { key: 2, name: "Jenkins", url: "http://124.221.131.186:8080/" },
-  { key: 3, name: "YiRan组件库", url: "http://124.221.131.186/#/UI" },
-  { key: 3, name: "gitLab", url: "http://124.221.131.186:8081/" },
+  { key: 1, name: "NPM私服包管理", url: "http://124.221.131.186:4873/" },
+  { key: 2, name: "Jenkins自动发布", url: "http://124.221.131.186:8080/" },
+  { key: 3, name: "YiRan-Vue组件库", url: "http://124.221.131.186/#/UI" },
+  { key: 3, name: "gitLab私有仓库", url: "http://124.221.131.186:8082/" },
 ]);
 const linkTo = (url) => {
   window.location = url;
