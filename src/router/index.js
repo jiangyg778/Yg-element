@@ -5,15 +5,16 @@ const routes = [
     path: "/",
     name: "Index",
     component: () =>
+      import(/* webpackChunkName: "index" */ "../views/index/index.vue"),
+  },
+  ,
+  {
+    path: "/ui",
+    name: "ui",
+    redirect: "/form",
+    component: () =>
       import(/* webpackChunkName: "index" */ "../layouts/index.vue"),
     children: [
-      {
-        path: "/",
-        name: "Index",
-        redirect: "/form",
-        component: () =>
-          import(/* webpackChunkName: "index" */ "../views/home/index.vue"),
-      },
       {
         path: "/form",
         name: "Form",

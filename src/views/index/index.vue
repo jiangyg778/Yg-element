@@ -1,0 +1,48 @@
+<!--  -->
+<template>
+  <div class="title">
+    <h1>控制台导航</h1>
+  </div>
+  <div class="container">
+    <div v-for="item in actionList" class="card-item">
+      <el-card class="box-card" :key="item.key">
+        <div @click="linkTo(item.url)" class="active">{{ item.name }}</div>
+      </el-card>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+const actionList = ref([
+  { key: 1, name: "NPM私服", url: "http://124.221.131.186:4873/" },
+  { key: 2, name: "Jenkins", url: "http://124.221.131.186:8080/" },
+  { key: 3, name: "YiRan组件库", url: "http://124.221.131.186/#/UI" },
+  { key: 3, name: "gitLab", url: "http://124.221.131.186:8081/" },
+]);
+const linkTo = (url) => {
+  window.location = url;
+};
+</script>
+<style lang="less" scoped>
+.title {
+  text-align: center;
+}
+.container {
+  display: flex;
+  padding: 50px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .card-item {
+    box-sizing: border-box;
+    width: 48%;
+    margin-bottom: 20px;
+    &:hover {
+      cursor: pointer;
+      .active {
+        color: red;
+      }
+    }
+  }
+}
+</style>
